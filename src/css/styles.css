@@ -1,0 +1,193 @@
+
+/*Configs basicos*/
+
+@font-face {
+
+    font-family: 'good times';
+  src: url('./fonts/good times rg.otf');
+
+}
+.headerTittle {
+
+    /*font-family: 'good times';*/
+    color: white;
+}
+body {
+    background-color: black;  
+}
+
+/*LOGO*/
+
+.logoEfect {
+
+    background: black;
+    cursor: pointer;
+    border: none;
+    color: white;
+    
+    position: relative;
+    border-radius: 12px;
+
+    margin: 2rem;
+}
+.logoEfect::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg, 
+        purple, magenta, violet, magenta, purple
+        /*red, blue, deeppink, blue, red, blue, deeppink, blue*/
+    );
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+
+}
+@keyframes glowing {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/*Tarjetas con sombra*/
+
+.cardShadow {
+    transition: transform 0.2s; /* Smooth transition for scaling */
+}
+  
+.cardShadow:hover {
+    animation: shadowAnimation 1s infinite;
+    transform: scale(1.05); /* Slightly scale up the card on hover */
+}
+
+@keyframes shadowAnimation {
+    0% {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/*tarjetas circulares*/
+
+.circular-card {
+    border-radius: 50%;
+    margin: 1rem;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .circular-card img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .circular-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .circular-card .card-body {
+    display: none; /* Hide the card body */
+  }
+
+/*Desplazadores*/
+
+.headerBottons {
+
+    margin: 10px;
+    position: relative;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+
+}
+.headerBottons:hover {
+    color: violet;
+}
+
+.headerBottons span {
+    position: absolute;
+    background: linear-gradient(
+        45deg, 
+        purple, magenta, violet, magenta
+        /*red, blue, deeppink, blue, red, blue, deeppink, blue*/
+    );
+    transition: .5s;
+}
+
+.headerBottons span:nth-child(1) {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: -100%;
+}
+
+.headerBottons span:nth-child(2) {
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: -100%;
+}
+
+.headerBottons span:nth-child(3) {
+    width: 1px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+
+.headerBottons span:nth-child(4) {
+    width: 1px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+
+.headerBottons:hover span:nth-child(1) {
+    left: 0;
+}
+
+.headerBottons:hover span:nth-child(2) {
+    right: 0;
+}
+
+.headerBottons:hover span:nth-child(3) {
+    bottom: 0;
+}
+
+.headerBottons:hover span:nth-child(4) {
+    top: 0;
+}
