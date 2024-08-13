@@ -30,9 +30,9 @@ body {
     color: white;
     
     position: relative;
-    border-radius: 12px;
+    border-radius: 80%;
 
-    margin: 2rem;
+    margin: 1.5rem;
 }
 .logoEfect::before {
 
@@ -49,7 +49,7 @@ body {
         /*red, blue, deeppink, blue, red, blue, deeppink, blue*/
     );
     background-size: 800%;
-    border-radius: 10px;
+    border-radius: 80%;
     filter: blur(8px);
     animation: glowing 20s linear infinite;
 
